@@ -1,48 +1,32 @@
 # Prerequisites
 
-## Google Cloud Platform
+## Amazon Web Services
 
-This tutorial leverages the [Google Cloud Platform](https://cloud.google.com/) to streamline provisioning of the compute infrastructure required to bootstrap a Kubernetes cluster from the ground up. [Sign up](https://cloud.google.com/free/) for $300 in free credits.
+This tutorial leverages the [Amazon Web Services](https://aws.amazon.com/) to streamline provisioning of the compute infrastructure required to bootstrap a Kubernetes cluster from the ground up. [Sign up](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html) and take advantage of the [free tier](https://aws.amazon.com/free/).
 
-[Estimated cost](https://cloud.google.com/products/calculator/#id=78df6ced-9c50-48f8-a670-bc5003f2ddaa) to run this tutorial: $0.22 per hour ($5.39 per day).
+[Estimated cost](https://calculator.s3.amazonaws.com/index.html) to run this tutorial: $0.28 per hour ($6.63 per day).
 
-> The compute resources required for this tutorial exceed the Google Cloud Platform free tier.
+> The compute resources required for this tutorial exceed the AWS free tier.
 
-## Google Cloud Platform SDK
+## AWS CLI
 
-### Install the Google Cloud SDK
+### Install the AWS CLI
 
-Follow the Google Cloud SDK [documentation](https://cloud.google.com/sdk/) to install and configure the `gcloud` command line utility.
+Follow the AWS CLI [documentation](https://docs.aws.amazon.com/cli/latest/userguide/installing.html) to install and configure the `aws` command line utility.
 
-Verify the Google Cloud SDK version is 200.0.0 or higher:
-
-```
-gcloud version
-```
-
-### Set a Default Compute Region and Zone
-
-This tutorial assumes a default compute region and zone have been configured.
-
-If you are using the `gcloud` command-line tool for the first time `init` is the easiest way to do this:
+Verify the CLI version is 1.15.32 or higher:
 
 ```
-gcloud init
+aws --version
 ```
 
-Otherwise set a default compute region:
+### Set a default region and output format
+
+This tutorial assumes a default region has been configured and that the default output format is `json`.
 
 ```
-gcloud config set compute/region us-west1
+aws config
 ```
-
-Set a default compute zone:
-
-```
-gcloud config set compute/zone us-west1-c
-```
-
-> Use the `gcloud compute zones list` command to view additional regions and zones.
 
 ## Running Commands in Parallel with tmux
 
